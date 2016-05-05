@@ -19,9 +19,9 @@ def get_directed_graph_from_coo(coo):
 def get_undirected_graph_from_coo(coo):
   pass
 
-def get_undirected_graph_from_dblp_v1(dblp_file):
+def get_undirected_graph_from_dblp_v1(dblp_file, line_delimiter = '\n'):
   G = TUNGraph.New()
-  raw_data = open(dblp_file).read().split('\n')[0:-1]
+  raw_data = open(dblp_file).read().split(line_delimiter)[0:-1]
   for i in range(4, len(raw_data)):
     temp = raw_data[i].split('\t')
     src_id = int(temp[0])
@@ -33,9 +33,9 @@ def get_undirected_graph_from_dblp_v1(dblp_file):
     G.AddEdge(src_id, dst_id)
   return G
 
-def get_directed_graph_from_p2p_v1(p2p_file):
+def get_directed_graph_from_p2p_v1(p2p_file, line_delimiter = '\r\n'):
   G = TNGraph.New()
-  raw_data = open(p2p_file).read().split('\r\n')[0:-1]
+  raw_data = open(p2p_file).read().split(line_delimiter)[0:-1]
   for i in range(4, len(raw_data)):
     temp = raw_data[i].split('\t')
     src_id = int(temp[0])
