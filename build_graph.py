@@ -47,6 +47,9 @@ def get_directed_graph_from_p2p_v1(p2p_file, line_delimiter = '\r\n'):
     G.AddEdge(src_id, dst_id)
   return G
 
+def get_directed_graph_from_Email_v1(p2p_file, line_delimiter = '\r\n'):
+  return get_directed_graph_from_p2p_v1(p2p_file, line_delimiter = '\r\n')
+
 ##################################
 # undirected
 
@@ -532,21 +535,23 @@ def main():
   # print G.GetEdges()
   # G = get_directed_graph_from_p2p_v1("source/p2p08/p2p-Gnutella08/p2p-Gnutella08.txt")
   # G = get_directed_graph_from_p2p_v1("source/p2p31/p2p-Gnutella31/p2p-Gnutella31.txt")
-  G = get_undirected_graph_from_dblp_v1("source/com-DBLP/com-dblp.ungraph/com-dblp.ungraph.txt")
-  G1 = random_node_sample_graph_from_undirected(G, 0.2)
-  G2 = random_edge_sample_graph_from_undirected(G, 0.2)
-  G3 = random_walking_sample_graph_from_undirected(G, 0.2)
-  G4 = forest_fire_sample_graph_from_undirected(G, 0.2)
-  print G.GetNodes()
-  print G.GetEdges()
-  print G1.GetNodes()
-  print G1.GetEdges()
-  print G2.GetNodes()
-  print G2.GetEdges()
-  print G3.GetNodes()
-  print G3.GetEdges()
-  print G4.GetNodes()
-  print G4.GetEdges()
+  
+  # G = get_undirected_graph_from_dblp_v1("source/com-DBLP/com-dblp.ungraph/com-dblp.ungraph.txt")
+  # G1 = random_node_sample_graph_from_undirected(G, 0.2)
+  # G2 = random_edge_sample_graph_from_undirected(G, 0.2)
+  # G3 = random_walking_sample_graph_from_undirected(G, 0.2)
+  # G4 = forest_fire_sample_graph_from_undirected(G, 0.2)
+  # print G.GetNodes()
+  # print G.GetEdges()
+  # print G1.GetNodes()
+  # print G1.GetEdges()
+  # print G2.GetNodes()
+  # print G2.GetEdges()
+  # print G3.GetNodes()
+  # print G3.GetEdges()
+  # print G4.GetNodes()
+  # print G4.GetEdges()
+  pass
 
 if __name__ == '__main__':
   sys.exit(int(main() or 0))
