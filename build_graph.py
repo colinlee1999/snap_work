@@ -47,8 +47,8 @@ def get_directed_graph_from_p2p_v1(p2p_file, line_delimiter = '\r\n'):
     G.AddEdge(src_id, dst_id)
   return G
 
-def get_directed_graph_from_Email_v1(p2p_file, line_delimiter = '\r\n'):
-  return get_directed_graph_from_p2p_v1(p2p_file, line_delimiter = '\r\n')
+def get_directed_graph_from_Email_v1(Email_file, line_delimiter = '\r\n'):
+  return get_directed_graph_from_p2p_v1(Email_file, line_delimiter = '\r\n')
 
 ##################################
 # undirected

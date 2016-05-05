@@ -93,7 +93,7 @@ def clustering_coefficient_distribution_directed(G, num_segments = 10):
       coefficient.append(0)
     else:
       coefficient.append(float(subgraph.GetEdges())/(d_v)/(d_v-1))
-  
+
   coefficient = sorted(coefficient)
   cumulative_frequency = [None]*(num_segments+1)
   
